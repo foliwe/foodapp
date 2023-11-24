@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="">
+    <img src="{{ food.item_image }}" alt="" width="600">
+</div>
+<h1>{{ food.item_name }}</h1>
+<p>{{ food.item_price }}</p>
+<p>{{ food.item_description }}</p>
+<p> <a href="{% url 'food:update' food.id %}">Update</a>
+    <a href="{% url 'food:delete' food.id %}">Delete</a>
+</p>
+{% endblock %}
