@@ -6,5 +6,6 @@
     <img src="{{ item.item_image }}" alt="" width="150">
 </div>
 <h1> <a href="{% url 'food:detail' item.id %}">{{ item.item_name }}</a></h1>
+<p>{{ item.user.username}}</p>
 {% endfor %}
 {% endblock %}

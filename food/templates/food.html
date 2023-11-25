@@ -2,12 +2,14 @@
 
 {% block content %}
 <div class="">
-    <img src="{{ food.item_image }}" alt="" width="600">
+    <img src="{{ object.item_image }}" alt="" width="600">
 </div>
-<h1>{{ food.item_name }}</h1>
-<p>{{ food.item_price }}</p>
-<p>{{ food.item_description }}</p>
-<p> <a href="{% url 'food:update' food.id %}">Update</a>
-    <a href="{% url 'food:delete' food.id %}">Delete</a>
+<h1>{{ object.item_name }}</h1>
+<p>{{ object.item_price }} FCFA</p>
+<p>{{ object.item_description }}</p>
+{% if user.is_authenticated %}
+<p> <a href="{% url 'food:update' object.id %}">Update</a>
+    <a href="{% url 'food:delete' object.id %}">Delete</a>
 </p>
+{% endif %}
 {% endblock %}
